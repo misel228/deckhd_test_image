@@ -13,19 +13,19 @@ $white   = imagecolorallocate ( $image, 255, 255, 255 );
 $black   = imagecolorallocate ( $image,   0,   0,   0 );
 
 
-imagefilledrectangle( $image,  0,   0, 1599, 1199, $red );
-imagefilledrectangle( $image,  1,   1, 1598, 1198, $green );
-imagefilledrectangle( $image,  2,   2, 1597, 1197, $magenta );
-imagefilledrectangle( $image,  3,   3, 1596, 1196, $blue );
-imagefilledrectangle( $image,  4,   4, 1595, 1195, $yellow );
-imagefilledrectangle( $image,  5,   5, 1594, 1194, $cyan );
-imagefilledrectangle( $image,  6,   6, 1593, 1193, $black );
-imagefilledrectangle( $image,  7,   7, 1592, 1192, $light_cyan );
-imagefilledrectangle( $image,  8,   8, 1591, 1191, $light_magenta );
-imagefilledrectangle( $image,  9,   9, 1590, 1190, $white );
-imagefilledrectangle( $image,  10,   10, 1589, 1189, $light_magenta );
-imagefilledrectangle( $image,  11,   11, 1588, 1188, $light_cyan );
-imagefilledrectangle( $image,  12,   12, 1587, 1187, $black );
+imagefilledrectangle( $image,  0,   0, 1919, 1199, $red );
+imagefilledrectangle( $image,  1,   1, 1918, 1198, $green );
+imagefilledrectangle( $image,  2,   2, 1917, 1197, $magenta );
+imagefilledrectangle( $image,  3,   3, 1916, 1196, $blue );
+imagefilledrectangle( $image,  4,   4, 1915, 1195, $yellow );
+imagefilledrectangle( $image,  5,   5, 1914, 1194, $cyan );
+imagefilledrectangle( $image,  6,   6, 1913, 1193, $black );
+imagefilledrectangle( $image,  7,   7, 1912, 1192, $light_cyan );
+imagefilledrectangle( $image,  8,   8, 1911, 1191, $light_magenta );
+imagefilledrectangle( $image,  9,   9, 1910, 1190, $white );
+imagefilledrectangle( $image,  10,   10, 1909, 1189, $light_magenta );
+imagefilledrectangle( $image,  11,   11, 1908, 1188, $light_cyan );
+imagefilledrectangle( $image,  12,   12, 1907, 1187, $black );
 
 imagestring(
     $image,
