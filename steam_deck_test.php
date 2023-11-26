@@ -16,6 +16,7 @@ $light_magenta = imagecolorallocate($image, 245, 169, 184);
 $white   = imagecolorallocate($image, 255, 255, 255);
 $black   = imagecolorallocate($image, 0, 0, 0);
 
+## OUTER BORDER
 $color_order = [
     $red,
     $green,
@@ -33,11 +34,44 @@ $color_order = [
 ];
 
 
-for ($line = 0; $line <= 12; $line += 1) {
+for ($line = 0; $line < count($color_order); $line += 1) {
     imagefilledrectangle($image, $line, $line, ($x - $line - 1), ($y - $line - 1), $color_order[$line]);
 }
 
+## GRID
 
+$dark_grey   = imagecolorallocate($image, 28, 28, 28);
+$grey   = imagecolorallocate($image, 128, 128, 128);
+
+# the first multiple of five after the color bands
+$small_grid = 24;
+$offset_small = ((floor(count($color_order) / $small_grid) + 1) * $small_grid) - 1;
+
+# vertical 24 pix
+for($line_x = $offset_small; $line_x < ($x - $offset_small); $line_x += $small_grid) {
+    imageline($image, $line_x, (count($color_order) -1), $line_x, ($y - (count($color_order))), $dark_grey);
+}
+
+# horizontal 24 pix
+for($line_y = $offset_small; $line_y < ($y - $offset_small); $line_y += $small_grid) {
+    imageline($image, (count($color_order) -1), $line_y, ($x - (count($color_order))), $line_y, $dark_grey);
+}
+
+# the first multiple of five after the color bands
+$large_grid = 240;
+$offset_large = ((floor(count($color_order) / $large_grid) + 1) * $large_grid) - 1;
+
+# vertical 24 pix
+for($line_x = $offset_large; $line_x < ($x - $offset_large); $line_x += $large_grid) {
+    imageline($image, $line_x, (count($color_order) -1), $line_x, ($y - (count($color_order))), $grey);
+}
+
+# horizontal 24 pix
+for($line_y = $offset_large; $line_y < ($y - $offset_large); $line_y += $large_grid) {
+    imageline($image, (count($color_order) -1), $line_y, ($x - (count($color_order))), $line_y, $grey);
+}
+
+## TEXT
 imagestring(
     $image,
     5,
